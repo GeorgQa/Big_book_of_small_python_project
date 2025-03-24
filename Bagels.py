@@ -45,7 +45,7 @@ clues would be Fermi Pico.'''.format(NUM_DUGITS))
 def getSecretNum():
     """Возвращает строку из NUM_DIGITS уникальных случайных цифр."""
     numbers = list('0123456789')
-    random.shuffke(numbers)
+    random.shuffle(numbers)
 
     secretNum= ''
     for i in range(NUM_DUGITS):
@@ -72,3 +72,7 @@ def getClues(guess,secretNum):
         #порядок ничего не выдал.
         clues.sort()
         return ''.join(clues)
+
+
+if __name__ == '__main__':
+    main()
