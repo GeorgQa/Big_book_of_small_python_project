@@ -120,4 +120,100 @@ def getBet(maxBet):
             print("THanks for playing!")
             sys.exit()
 
-        if not bet.isdecimal()
+        if not bet.isdecimal():
+            continue
+        bet = int(bet)
+        if 1 <= bet <= maxBet:
+            return bet
+
+def getDecr():
+    #Возвращаем список кортежей для 52 карт
+    deck = []
+    for suit in (HEARTS, DIAMONDS, SPADES, CLUBS):
+        for rank in range(2,11):
+            deck.append((str(rank), suit))
+        for rank in ("J", "Q", "K", "A"):
+            deck.append((rank, suit))
+    random.shuffle(deck)
+    return  deck
+
+def displayHands(playerHand, dealerHand, showDealerHand):
+    #Отображаем карты игрока и диллера. скрываем первую карту дилера если showDealerHand = False
+    print()
+    if showDealerHand:
+        print("DEALER:", getHandValue(dealerHand))
+        displayCards(dealerHand)
+    else:
+        print("DEALER: ???")
+        #скрываем первую карту диллера
+        displayCards([BACKSIDE] + dealerHand[1:])
+
+    print("PLAYER:", getHandValue(playerHand))
+    displayCards(playerHand)
+
+def getHandValue(cards):
+    #Возвращаем стоимость карт. Где фигурные карты стоят 10 , туз 11 или 1 (функция подбирает стоимость)
+    value = 0
+    numberOfAces = 0
+
+    #добалвяем стоимость карт не туза
+    for card in  cards:
+        rank = card[0]
+        if rank == "A":
+            numberOfAces += 1
+        elif rank in ("K","Q","J"): #Эти стоят по 10 баллов
+            value += 10
+        else:
+            value += int(rank) #стоимость равна номиналу
+
+    #А сейчас для тузов
+    value += numberOfAces #Добавляем 1 для каждого туза.
+    for i in range(numberOfAces):
+        #Если можно добавить ещё 10 с перебором, добавимЖ
+        if value + 10 <= 21:
+            value += 10
+        return  value
+
+def displayCards(cards):
+    #Отображаем все карты их списка карт
+    rows = ["", "", "", "", ""]
+
+    for i ,cards in enumerate(cards):
+        rows[0] += " __ " #Выводим верхнюю строку карты
+        if card == BACKSIDE: #Выводим рубашку картыЖ
+            rows[1] += "|## |"
+            rows[2] += "|###|"
+            rows[3] += "|_##|"
+        else:
+        #выводим лицевую сторону карты
+            rank, suit = card #Карта - структура данных тип кортеж
+            rows[1] += "|{} |"
+            rows[2] += "| {} |"
+            rows[3] += "|_{}|"
+
+    for row in rows:
+        print(row)
+
+def getMove(playerHand, money):
+    """Справиваем, какой ход хочет сделать игрок и возвращаем "H"
+    , если он хочет взять ещё карту, "S", если ему хватит, и "D", если он удваивае"""
+    while True:#Продолжаем итерации цикла пока игрок не сделает ход
+        #определяем какой ход делает игрок
+        moves = ['(H)it', '(s)tand']
+
+        #Игрок может увоить при первом ходеб это ясно из того, что у игрока ровно две картыЖ
+        if len(playerHand) == 2 and money > 0:
+            moves.append("(D)ouble down")
+
+        #Получаем ход игрока:
+        movePrompt = ", ".join(moves) + "> "
+        move = input(movePrompt).upper()
+        if move in ("H", "S"):
+            return  move
+        if move == "D" and "(D)ouble down' in moves":
+            return  move
+
+
+#Если программа не импортируется, а запускается производим запуск:
+if __name__ == "__main__":
+    main()
