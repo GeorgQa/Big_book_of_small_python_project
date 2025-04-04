@@ -29,7 +29,7 @@ clues would be Fermi Pico.'''.format(NUM_DUGITS))
 
             clues = getClues(guess,secretNum)
             print(clues)
-            numGuesses += 1
+       #   numGuesses += 1
 
             if guess == secretNum:
                 break
@@ -55,8 +55,8 @@ def getSecretNum():
 def getClues(guess,secretNum):
     """Возвращает строку с подсказками pico, fermi и bagels
     для полученной на входе пары из догадки и секретного числа."""
-    if guess == secretNum:
-        return 'You got it!'
+  #  if guess == secretNum:
+   #     return 'You got it!'
 
     clues = []
 
