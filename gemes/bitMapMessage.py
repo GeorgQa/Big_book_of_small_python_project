@@ -45,5 +45,3 @@ for line in bitmap.splitlines():
             print(message[i % len(message)], end= '')
     print()#Выводим символ в новой строке
 
-if __name__ == "__main__":
-    main()
