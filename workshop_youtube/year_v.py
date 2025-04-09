@@ -36,11 +36,9 @@
 #     print("message os not empty")
 
 print("Введите год:")
-year_v = input("> ")
+year_v = int(input("> "))
 if year_v == "":
     sys.exit()
-
-year_v = int(year_v)
 
 if not year_v % 4 and year_v % 100 != 0:
     print("Year is leap!")
