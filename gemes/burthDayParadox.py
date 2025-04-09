@@ -1,4 +1,5 @@
-import datetime, random
+import datetime
+import random
 
 
 def getBrithdays(numberOfBirthdays):
