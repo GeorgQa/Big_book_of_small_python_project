@@ -44,9 +44,10 @@ print(type(integer))
 
 print(f"Можно в строке делать какие то действия например {my_int + my_int2 } либо { my_int * my_int2} ")
 
-
-
-
+name_print = "Алиса"
+age = 25
+template = "{} - {} лет"
+print(template.format(name_print, age))
 
 string = input("Enter a number: ")
 if string.isdecimal():#проверяет является ли данные строкой
