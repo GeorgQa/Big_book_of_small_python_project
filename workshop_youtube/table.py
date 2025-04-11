@@ -7,7 +7,6 @@ print("Рисуем таблицу умножения")
 
 for i in range(1, 11):
     for j in range(1, 11):
-        print("____")
         count = i * j
         print(f'{i} * {j} = {count}')
 
