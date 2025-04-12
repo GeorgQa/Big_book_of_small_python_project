@@ -1,18 +1,18 @@
-file_names = ["document1.txt", "image1.jpg", "document2.txt", "image2.jpg" ]
-
-
-#перебираем значения словаря и выводим в новой строке
-for fale_name in file_names:
-    print(fale_name)
-
-#выводим в стоблец по буквам  строку
-greeting = "hello, word!"
-count_0 = 0
-for char in greeting:
-    if char == "o":
-        count_0 += 1
-        print(char)
-print(count_0)
+# file_names = ["document1.txt", "image1.jpg", "document2.txt", "image2.jpg" ]
+#
+#
+# #перебираем значения словаря и выводим в новой строке
+# for fale_name in file_names:
+#     print(fale_name)
+#
+# #выводим в стоблец по буквам  строку
+# greeting = "hello, word!"
+# count_0 = 0
+# for char in greeting:
+#     if char == "o":
+#         count_0 += 1
+#         print(char)
+# print(count_0)
 
 # Синтаксический сахар
 # добавить одно в другое
@@ -36,39 +36,39 @@ for student in students:
     for char in student:
         print(char)
 
-
-numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-#мой вариант
-for number in numbers[::2]:
-    print(number)
-
-#варинат с continue и break
-
-for num in numbers:
-    # if num % 2 == 0 :
-    #     continue
-    # print(num)
-    if num == 10:
-        break
-    print(num)
-
-numbers = [10, 11, 12, 13,14,15]
-
-for i in range(len(numbers)):
-    numbers[i]+= 1
-print(numbers)
-
-
-
-greeting = "hello, world !"
-
-indexes = []
-count = 0
-
-for i in range(len(greeting)):
-   if greeting[i] == "o":
-       count += 1
-       indexes.append(i)
-
-print(indexes)
-print(count)
+#
+# numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# #мой вариант
+# for number in numbers[::2]:
+#     print(number)
+#
+# #варинат с continue и break
+#
+# for num in numbers:
+#     # if num % 2 == 0 :
+#     #     continue
+#     # print(num)
+#     if num == 10:
+#         break
+#     print(num)
+#
+# numbers = [10, 11, 12, 13,14,15]
+#
+# for i in range(len(numbers)):
+#     numbers[i]+= 1
+# print(numbers)
+#
+#
+#
+# greeting = "hello, world !"
+#
+# indexes = []
+# count = 0
+#
+# for i in range(len(greeting)):
+#    if greeting[i] == "o":
+#        count += 1
+#        indexes.append(i)
+#
+# print(indexes)
+# print(count)
