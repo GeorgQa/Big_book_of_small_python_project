@@ -6,7 +6,7 @@ for fale_name in file_names:
     print(fale_name)
 
 #выводим в стоблец по буквам  строку
-greeting = "Hey!"
+greeting = "HELLO WORLD!"
 count_0 = 0
 for char in greeting:
     if char == "o":
