@@ -43,4 +43,4 @@ def  simulatre_martingale_for_nplayers(*, starting_bet: int, min_bet: int, max_b
     return  total_steps_to_loose / count_games
 
 
-print(simulatre_martingale_for_nplayers(starting_bet=15000 , min_bet= 1, max_bet= 10000000, count_games= 10))
+print(simulatre_martingale_for_nplayers(starting_bet=1000 , min_bet= 1, max_bet= 100, count_games= 10))
