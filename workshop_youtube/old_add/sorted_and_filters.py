@@ -51,3 +51,21 @@ def sort_dy_age_name(element:dict) -> tuple[int, str]:
 sorted_from_age_and_name = sorted(people_from_sort, key=sort_dy_age_name)
 
 print("Sorted by name and age", sorted_from_age_and_name)
+
+def is_even(n: int) -> bool:
+    return  n % 2 == 0
+
+numbers = [1,2,3,4,5,6,7,8,9,0,11,12,14,15]
+
+filetred_numbers = list(filter(is_even, numbers))
+print(filetred_numbers)
+print(type(filetred_numbers))
+
+
+def is_filter_people(perspon: dict) -> bool:
+    return perspon["age"] >= 18
+
+filter_of_people = list(filter(is_filter_people, people_from_sort))
+
+print(filter_of_people)
+print(type(filter_of_people))
